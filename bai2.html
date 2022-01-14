@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<!--<form>-->
+<!--    &lt;!&ndash;               oninput được kích hoạt khi người dùng nhập hoặc thay đổi thông tin thẻ&ndash;&gt;-->
+<!--&lt;!&ndash;                       onchange diễn ra khi chỏ chuột vào tp` khác&ndash;&gt;-->
+<!--    <p>-->
+<!--        <label>Fahrenheit</label>-->
+<!--        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"-->
+
+
+<!--               oninput="temperatureConverter(this.value)"-->
+
+<!--               onchange="temperatureConverter(this.value)">-->
+<!--    </p>-->
+<!--    <p>Celsius: <span id="outputCelsius"></span></p>-->
+<!--</form>-->
+
+<!--<script>-->
+
+<!--    function temperatureConverter(valNum) {-->
+<!--        valNum = parseFloat(valNum);-->
+<!--        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;-->
+<!--    }-->
+
+<!--</script>-->
+
+  <form>
+      <p>
+          <label>Fahrenheit</label>
+          <input type="number" id="inputFahrenhit" oninput="temperatureConverter()" onchange="convert()">
+      </p>
+      <p>Celsius: <span id="outputCelsius"></span></p>
+  </form>
+
+<script>
+    function temperatureConverter(valueNum) {
+        let result = (valueNum - 32)/1.8
+        return result;
+    }
+    function convert(){
+        let a = parseFloat(document.getElementById("inputFahrenheit").value);
+        let result = temperatureConverter(a)
+        document.getElementById("outputCelsius").innerHTML = result;
+    }
+</script>
+</body>
+</html>
